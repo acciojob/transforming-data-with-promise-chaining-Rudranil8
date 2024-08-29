@@ -39,5 +39,35 @@ document.getElementById("btn").addEventListener("click", ()=>{
   .then(function(num) {
     let y = document.getElementById("output");
     y.innerText = `Result: ${num}`;
+    return new Promise(function(resolve, reject) {
+      setTimeout(function() {
+        num -= 3; // subtract 3 from the number
+        resolve(num);
+      }, 1000);
+    });
+  })
+  .then(function(num) {
+    let y = document.getElementById("output");
+    y.innerText = `Result: ${num}`;
+    return new Promise(function(resolve, reject) {
+      setTimeout(function() {
+        num /= 2; // divide the number by 2
+        resolve(num);
+      }, 1000);
+    });
+  })
+  .then(function(num) {
+    let y = document.getElementById("output");
+    y.innerText = `Result: ${num}`;
+    return new Promise(function(resolve, reject) {
+      setTimeout(function() {
+        num += 10; // add 10 to the number
+        resolve(num);
+      }, 1000);
+    });
+  })
+  .then(function(num) {
+    let y = document.getElementById("output");
+    y.innerText = `Final Result: ${num}`; // update the output with the final result
   });
 });
